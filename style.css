@@ -1,0 +1,137 @@
+body {
+   font-family: Arial; /*fallback*/
+   font-family: 'Open Sans', sans-serif;
+   background: rgb(247, 247, 255);
+   margin: 0;
+}
+
+
+/*------------------------------------*/
+/*NAVIGATION BAR STYLES*/
+/*------------------------------------*/
+
+/* todo - try to use px less and use percents or more dynamic means*/
+#nav-bar {
+   background: rgb(190, 215, 235);
+   /*background: rgba(190, 215, 235, 0.5);*/
+   font-weight: bold;
+   border-bottom: 5px solid rgb(0, 0, 0);
+   margin-bottom: 20px;
+   overflow: hidden;
+   webkit-user-select: none;
+   user-select: none;
+}
+#nav-bar h1 {
+   float: left;
+   font-size: 1.5rem;
+   margin: 5px 10px 0 10px;
+}
+#nav-bar a {
+   float: left;
+   color: rgb(215, 30, 90);
+   text-decoration: none;
+   text-align: center;
+   font-size: 1.25rem;
+   border-right: 4px solid rgb(0, 0, 0);
+   padding: 10px 15px;
+}
+#nav-bar a:first-of-type {
+   border-left: 5px solid rgb(0, 0, 0);
+   border-right: 5px solid rgb(0, 0, 0);
+}
+#nav-bar a:hover {
+   background: rgb(160, 185, 205);
+   background: rgba(160, 185, 205, 0.8);
+}
+#nav-bar a.active { 
+   /*look into the waring above later*/
+   color: rgb(0, 0, 255);
+}
+
+/*------------------------------------*/
+/*ELEMENT PAGE ITEMS*/
+/*------------------------------------*/
+
+#elem-display {
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   background: rgb(190, 215, 235);
+   border: 5px solid rgb(0, 0, 0);
+   padding: 10px;
+   width: 800px;
+   height: 750px;
+   overflow: auto;
+}
+#elem-display div:target {
+   background: rgb(100, 100, 200);
+   background: rgba(100, 100, 200, 0.8);
+}
+.elem-display-item {
+   background: rgb(215, 30, 90);
+   color: rgb(255, 255, 255);
+   text-align: center;
+   border: 3px solid rgb(0, 0, 0);
+   margin: 5px;
+   padding: 10px;
+   min-width: 100px;
+}
+.elem-display-item h1 { 
+   /*number*/
+   font-style: italic;
+   font-size: 1rem;
+}
+.elem-display-item h2 {
+   /*symbol*/
+   font-size: 2rem;
+}
+.elem-display-item h3 {
+   /*name*/
+   font-size: 1rem
+}
+.elem-display-item h3 a {
+   /*name link*/
+   color: rgb(100, 0, 250);
+}
+.elem-display-item h4 {
+   /*mass*/
+   font-style: italic;
+   font-size: 1rem;
+   color: rgb(220, 220, 220);
+}
+#elem-search {
+   width: 350px;
+   background: rgb(190, 215, 235);
+   border: 5px solid rgb(0, 0, 0);
+   margin-right: -5px;
+}
+#elem-search-disp {
+   height: 500px;
+   overflow: auto;
+   margin: 10px;
+   background: white;
+   padding: 0 10px;
+}
+/*------------------------------------*/
+/*OTHER*/
+/*------------------------------------*/
+
+.v-centered-div {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+
+/*custom scrollbar (not sure if i want to keep this)*/
+/*::-webkit-scrollbar {*/
+/*   width: 10px;*/
+/*}*/
+/*::-webkit-scrollbar-track {*/
+/*   background: rgb(175, 175, 175);*/
+/*   background: rgba(175, 175, 175, 0.4);*/
+/*}*/
+/*::-webkit-scrollbar-thumb {*/
+/*   background: rgb(255, 255, 255);*/
+/*}*/
+/*::-webkit-scrollbar-thumb:hover {*/
+/*   background: rgb(200, 200, 200);*/
+/*}*/
