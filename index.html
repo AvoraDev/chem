@@ -1,66 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Chemistry Helper</title>
-   <!--google font-->
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@360&ampdisplay=swap" rel="stylesheet">
-   <!--stylesheet-->
-   <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry Helper</title>
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@360&ampdisplay=swap" rel="stylesheet">
+  <!--stylesheet-->
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body onload="ELEMENTS.Init('elem-display', 'elem-display-item')">
-   <!--navigation bar-->
-   <div id="nav-bar">
-      <h1>Chemistry Helper</h1>
-      <a>Elements</a>
-      <a>Calculators</a>
-      <a>Constants</a>
-      <a>Other</a>
-   </div>
-   
-   <!--periodic table elements-->
-   <h1 style="text-align: center">Elements</h1>
-   <div class="v-centered-div">
-      <!--search menu-->
-      <div id="elem-search">
-         <!--using snake_casing here because i want to yeetus-->
-         <!--text input-->
-         <input type="text" name="_searchBar" id="_searchBar"
-            placeholder="Type Here">
-         
-         <!--dropdown-->
-         <select id="_indexDdl">
-            <option>All</option>
-            <option>Number</option>
-            <option>Symbol</option>
-            <option>Name</option>
-            <option>Mass</option>
-         </select>
-         
-         <!--'random element' button-->
-         <input type="button" name="_randElemBtn" id="_randElemBtn"
-            value="Random Element"/>
-            
-         <!--search display-->
-         <div id="elem-search-disp">
-            <p>
-               _index: <span id="_index">All</span>
-               <br>
-               <span id="_searchDisp">...</span>
-            </p>
-         </div>
-      </div>
+  <!--navigation bar-->
+  <div id="nav-bar">
+    <h1>Chemistry Helper</h1>
+    <a>Elements</a>
+    <a>Calculators</a>
+    <a>Constants</a>
+    <a>Other</a>
+  </div>
+  
+  <!--periodic table elements-->
+  <h1 style="text-align: center">Elements</h1>
+  <div class="v-centered-div">
+    <!--search menu-->
+    <div id="elem-search">
       
-      <!--element display-->
-      <div id="elem-display"></div>
-   </div>
-   
-   <!--javascript-->
-   <script type="text/javascript" src="./js/elements.js">
-   </script>
-   <script type="text/javascript" src="./js/index.js">
-   </script>
+      
+      <!--index dropdown-->
+      <label for="_indexDdl">Search by </label>
+      <select id="_indexDdl">
+        <option>Atomic Number</option>
+        <option>Symbol</option>
+        <option selected>Name</option>
+        <option>Atomic Mass</option>
+      </select>
+      
+      <!--search input-->
+      <input type="text" name="_searchBar" id="_searchBar"
+        placeholder="Search...">
+      
+      <!--'random element' button-->
+      <input type="button" name="_randElemBtn" id="_randElemBtn"
+        value="Random Element"/>
+        
+      <!--search display-->
+      <div id="elem-search-disp">
+        <p id="_searchDisp">Your results will appear here</p>
+      </div>
+    </div>
+    
+    <!--element display-->
+    <div id="elem-display"></div>
+  </div>
+  
+  <!--javascript-->
+  <script type="text/javascript" src="./src/elements.js">
+  </script>
+  <script type="text/javascript" src="./src/index.js">
+  </script>
 </body>
 </html>

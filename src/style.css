@@ -5,7 +5,6 @@ body {
    margin: 0;
 }
 
-
 /*------------------------------------*/
 /*NAVIGATION BAR STYLES*/
 /*------------------------------------*/
@@ -44,7 +43,6 @@ body {
    background: rgba(160, 185, 205, 0.8);
 }
 #nav-bar a.active { 
-   /*look into the waring above later*/
    color: rgb(0, 0, 255);
 }
 
@@ -90,7 +88,7 @@ body {
 }
 .elem-display-item h3 a {
    /*name link*/
-   color: rgb(100, 0, 250);
+   color: rgb(0, 0, 255);
 }
 .elem-display-item h4 {
    /*mass*/
@@ -103,14 +101,32 @@ body {
    background: rgb(190, 215, 235);
    border: 5px solid rgb(0, 0, 0);
    margin-right: -5px;
+   padding: 10px;
+}
+#_searchBar {
+   width: 95%;
+   margin: 5px 0;
 }
 #elem-search-disp {
-   height: 500px;
+   height: 85%;
    overflow: auto;
-   margin: 10px;
    background: white;
    padding: 0 10px;
+   font-style: italic;
+   border: 5px solid black;
+   color: grey;
+   margin-top: 10px;
 }
+#elem-search-disp a {
+   display: block;
+   text-decoration: none;
+   color: rgb(0, 0, 255);
+}
+#elem-search-disp a:hover {
+   background: rgb(200, 200, 200);
+   background: rgba(200, 200, 200, 0.5);
+}
+
 /*------------------------------------*/
 /*OTHER*/
 /*------------------------------------*/
