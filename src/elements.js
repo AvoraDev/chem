@@ -710,7 +710,7 @@ const ELEMENTS = {
   // get a random element
   getRandElem: function() {
     // return random element name
-    return this.elems[this.getRandInt(0, this.elems.length - 1)];
+    return this.elemKeys[this.getRandInt(0, this.elemKeys.length - 1)];
   },
   // get a random interger
   getRandInt: function(min, max) {
