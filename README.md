@@ -1,4 +1,4 @@
-# 'chem'
+# 'chem' *(placeholder)*
 
 <!-- BADGES -->
 [![licence][license-shield]][license-url]
