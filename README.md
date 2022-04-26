@@ -1,4 +1,4 @@
-# 'chem'
+# 'chem' *(placeholder)*
 
 <!-- BADGES -->
 [![licence][license-shield]][license-url]
@@ -37,7 +37,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- MARKDOWN LINKS -->
 [avo-chem-url]: https://avoradev.github.io/chem/
 [license-shield]: https://img.shields.io/github/license/avoradev/chem
-[license-url]: https://github.com/avoRaDev/chem/blob/v2.1.0-beta/LICENSE
+[license-url]: https://github.com/avoRaDev/chem/blob/master/LICENSE
 [release-shield]: https://img.shields.io/github/v/release/avoradev/chem?include_prereleases
 [release-url]: https://github.com/avoRaDev/chem/releases
 [last-commit-shield]: https://img.shields.io/github/last-commit/avoradev/chem
