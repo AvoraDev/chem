@@ -1,7 +1,7 @@
 body {
-  font-family: Arial; /*fallback*/
-  font-family: 'Open Sans', sans-serif;
   background: rgb(247, 247, 255);
+  font-family: Arial; 
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 
@@ -9,34 +9,32 @@ body {
 /*NAVIGATION BAR STYLES*/
 /*------------------------------------*/
 
-/* todo - try to use px less and use percents or more dynamic means*/
 #nav-bar {
   background: rgb(190, 215, 235);
-  /*background: rgba(190, 215, 235, 0.5);*/
   font-weight: bold;
-  border-bottom: 5px solid rgb(0, 0, 0);
-  margin-bottom: 20px;
   overflow: hidden;
+  border-bottom: 0.3rem solid rgb(0, 0, 0);
+  margin-bottom: 1.25rem;
   webkit-user-select: none;
   user-select: none;
 }
 #nav-bar h1 {
   float: left;
   font-size: 1.5rem;
-  margin: 5px 10px 0 10px;
+  margin: 0.3rem 0.6rem 0 0.6rem;
 }
 #nav-bar a {
   float: left;
   color: rgb(215, 30, 90);
+  font-size: 1.25rem;
   text-decoration: none;
   text-align: center;
-  font-size: 1.25rem;
-  border-right: 4px solid rgb(0, 0, 0);
-  padding: 10px 15px;
+  border-right: 0.3rem solid rgb(0, 0, 0);
+  padding: 0.3rem 0.6rem;
 }
 #nav-bar a:first-of-type {
-  border-left: 5px solid rgb(0, 0, 0);
-  border-right: 5px solid rgb(0, 0, 0);
+  border-right: 0.3rem solid rgb(0, 0, 0);
+  border-left: 0.3rem solid rgb(0, 0, 0);
 }
 #nav-bar a:hover {
   background: rgb(160, 185, 205);
@@ -50,15 +48,22 @@ body {
 /*ELEMENT PAGE ITEMS*/
 /*------------------------------------*/
 
+#pte-container {
+  background: rgb(190, 215, 235);
+  display: grid;
+  width: 55%;
+  height: 50rem;
+  overflow: hidden;
+  grid-template-columns: 30% 70%;
+}
 #elem-display {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  background: rgb(190, 215, 235);
-  border: 5px solid rgb(0, 0, 0);
-  padding: 10px;
-  width: 800px;
-  height: 750px;
+  /*derrived from subtracting border and padding size from parents height*/
+  height: 48.2rem;
+  border: 0.3rem solid rgb(0, 0, 0);
   overflow: auto;
+  padding: 0.6rem;
+  grid-template-columns: auto auto auto auto;
 }
 #elem-display div:target {
   background: rgb(100, 100, 200);
@@ -66,17 +71,17 @@ body {
 }
 .elem-display-item {
   background: rgb(215, 30, 90);
+  min-width: 6rem;
   color: rgb(255, 255, 255);
   text-align: center;
-  border: 3px solid rgb(0, 0, 0);
-  margin: 5px;
-  padding: 10px;
-  min-width: 100px;
+  border: 0.2rem solid rgb(0, 0, 0);
+  margin: 0.3rem;
+  padding: 0.6rem;
 }
 .elem-display-item h1 { 
   /*number*/
-  font-style: italic;
   font-size: 1rem;
+  font-style: italic;
 }
 .elem-display-item h2 {
   /*symbol*/
@@ -92,36 +97,36 @@ body {
 }
 .elem-display-item h4 {
   /*mass*/
-  font-style: italic;
-  font-size: 1rem;
   color: rgb(220, 220, 220);
+  font-size: 1rem;
+  font-style: italic;
 }
 #elem-search {
-  width: 350px;
-  height: 750px;
-  background: rgb(190, 215, 235);
-  border: 5px solid rgb(0, 0, 0);
-  margin-right: -5px;
-  padding: 10px;
+  /*derrived from subtracting border and padding size from parents height*/
+  height: 48.2rem;
+  border: 0.3rem solid rgb(0, 0, 0);
+  margin-right: -0.3rem;
+  padding: 0.6rem;
 }
 #_searchBar {
+  /*try to clean this up*/
   width: 95%;
-  margin: 5px 0;
+  margin: 0.4rem 0;
 }
 #elem-search-disp {
-  height: 85%;
-  overflow: auto;
-  background: white;
-  padding: 0 10px;
+  background: rgb(255, 255, 255);
+  height: 80%;
+  color: rgb(150, 150, 150);
   font-style: italic;
-  border: 5px solid black;
-  color: grey;
-  margin-top: 10px;
+  border: 0.3rem solid black;
+  overflow: auto;
+  margin-top: 0.6rem;
+  padding: 0 0.6rem;
 }
 #elem-search-disp a {
   display: block;
-  text-decoration: none;
   color: rgb(0, 0, 255);
+  text-decoration: none;
 }
 #elem-search-disp a:hover {
   background: rgb(200, 200, 200);
@@ -138,17 +143,19 @@ body {
   width: 100%;
 }
 
-/*custom scrollbar (not sure if i want to keep this)*/
-/*::-webkit-scrollbar {*/
-/*  width: 10px;*/
-/*}*/
-/*::-webkit-scrollbar-track {*/
-/*  background: rgb(175, 175, 175);*/
-/*  background: rgba(175, 175, 175, 0.4);*/
-/*}*/
-/*::-webkit-scrollbar-thumb {*/
-/*  background: rgb(255, 255, 255);*/
-/*}*/
-/*::-webkit-scrollbar-thumb:hover {*/
-/*  background: rgb(200, 200, 200);*/
-/*}*/
+/*
+custom scrollbar (not sure if i want to keep this)
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(175, 175, 175);
+  background: rgba(175, 175, 175, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(200, 200, 200);
+}
+*/

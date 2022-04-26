@@ -23,35 +23,36 @@
   <!--periodic table elements-->
   <h1 style="text-align: center">Elements</h1>
   <div class="v-centered-div">
-    <!--search menu-->
-    <div id="elem-search">
-      
-      
-      <!--index dropdown-->
-      <label for="_indexDdl">Search by </label>
-      <select id="_indexDdl">
-        <option>Atomic Number</option>
-        <option>Symbol</option>
-        <option selected>Name</option>
-        <option>Atomic Mass</option>
-      </select>
-      
-      <!--search input-->
-      <input type="text" name="_searchBar" id="_searchBar"
-        placeholder="Search...">
-      
-      <!--'random element' button-->
-      <input type="button" name="_randElemBtn" id="_randElemBtn"
-        value="Random Element"/>
+    <div id="pte-container">
+      <!--search menu-->
+      <div id="elem-search">
         
-      <!--search display-->
-      <div id="elem-search-disp">
-        <p id="_searchDisp">Your results will appear here</p>
+        <!--index dropdown-->
+        <label for="_indexDdl">Search by </label>
+        <select id="_indexDdl">
+          <option>Atomic Number</option>
+          <option>Symbol</option>
+          <option selected>Name</option>
+          <option>Atomic Mass</option>
+        </select>
+        
+        <!--search input-->
+        <input type="text" name="_searchBar" id="_searchBar"
+          placeholder="Search...">
+        
+        <!--'random element' button-->
+        <input type="button" name="_randElemBtn" id="_randElemBtn"
+          value="Random Element"/>
+          
+        <!--search display-->
+        <div id="elem-search-disp">
+          <p id="_searchDisp">Your results will appear here</p>
+        </div>
       </div>
+      
+      <!--element display-->
+      <div id="elem-display"></div>
     </div>
-    
-    <!--element display-->
-    <div id="elem-display"></div>
   </div>
   
   <!--javascript-->
