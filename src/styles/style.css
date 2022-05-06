@@ -1,5 +1,5 @@
 body {
-  background: rgb(247, 247, 255);
+  background: rgb(245, 245, 255);
   font-family: Arial; 
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -18,12 +18,17 @@ body {
   webkit-user-select: none;
   user-select: none;
 }
-#nav-bar h1 {
+#nav-bar > h1 {
   float: left;
   font-size: 1.5rem;
   margin: 0.3rem 0.6rem 0 0.6rem;
+  text-decoration: none;
 }
-#nav-bar a {
+#nav-bar > h1 > a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+#nav-bar > a {
   float: left;
   color: rgb(215, 30, 90);
   font-size: 1.25rem;
@@ -32,20 +37,51 @@ body {
   border-right: 0.3rem solid rgb(0, 0, 0);
   padding: 0.3rem 0.6rem;
 }
-#nav-bar a:first-of-type {
+#nav-bar > a:first-of-type {
   border-right: 0.3rem solid rgb(0, 0, 0);
   border-left: 0.3rem solid rgb(0, 0, 0);
 }
-#nav-bar a:hover {
+#nav-bar > a:hover {
   background: rgb(160, 185, 205);
   background: rgba(160, 185, 205, 0.8);
 }
-#nav-bar a.active { 
+#nav-bar > a.active { 
   color: rgb(0, 0, 255);
 }
 
 /*------------------------------------*/
-/*ELEMENT PAGE ITEMS*/
+/*MAIN PAGE STLYES*/
+/*------------------------------------*/
+#main-div {
+  background: rgb(190, 215, 235);
+  text-align: center;
+  border: 0.5rem solid rgb(0, 0, 0);
+  padding: 0.5rem;
+}
+#main-div > div {
+  border: 0.5rem solid rgb(215, 30, 90);
+  padding: 8rem;
+}
+#todo-list {
+  background: rgb(150, 150, 150);
+  background: rgba(150, 150, 150, 0.3);
+  border: 0.25rem solid rgb(215, 30, 90);
+  padding: 0.6rem 0.8rem;
+}
+#todo-list > h4 {
+  /*font-style: italic;*/
+  color: rgb(215, 30, 90);
+}
+#link-list {
+  display: block;
+  margin-bottom: 2rem;
+}
+#link-list > a {
+  display: block;
+}
+
+/*------------------------------------*/
+/*ELEMENT PAGE STYLES*/
 /*------------------------------------*/
 
 #pte-container {
@@ -65,7 +101,7 @@ body {
   padding: 0.6rem;
   grid-template-columns: auto auto auto auto;
 }
-#elem-display div:target {
+#elem-display > div:target {
   background: rgb(100, 100, 200);
   background: rgba(100, 100, 200, 0.8);
 }
@@ -78,24 +114,24 @@ body {
   margin: 0.3rem;
   padding: 0.6rem;
 }
-.elem-display-item h1 { 
+.elem-display-item > h1 { 
   /*number*/
   font-size: 1rem;
   font-style: italic;
 }
-.elem-display-item h2 {
+.elem-display-item > h2 {
   /*symbol*/
   font-size: 2rem;
 }
-.elem-display-item h3 {
+.elem-display-item > h3 {
   /*name*/
   font-size: 1rem
 }
-.elem-display-item h3 a {
+.elem-display-item > h3 > a {
   /*name link*/
   color: rgb(0, 0, 255);
 }
-.elem-display-item h4 {
+.elem-display-item > h4 {
   /*mass*/
   color: rgb(220, 220, 220);
   font-size: 1rem;
@@ -110,8 +146,8 @@ body {
 }
 #_searchBar {
   /*try to clean this up*/
-  width: 95%;
-  margin: 0.4rem 0;
+  width: 85%;
+  margin: 0.6rem 0;
 }
 #elem-search-disp {
   background: rgb(255, 255, 255);
@@ -128,7 +164,7 @@ body {
   color: rgb(0, 0, 255);
   text-decoration: none;
 }
-#elem-search-disp a:hover {
+#elem-search-disp > a:hover {
   background: rgb(200, 200, 200);
   background: rgba(200, 200, 200, 0.5);
 }
@@ -137,10 +173,33 @@ body {
 /*OTHER*/
 /*------------------------------------*/
 
-.v-centered-div {
+.subtitle {
+  color: rgb(125, 125, 125);
+  font-style: italic;
+}
+.h-centered-div {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+.fullscreen-div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  /*for horizontal*/
+  justify-content: center;
+  /*for vertical*/
+  align-items: center;
+}
+.overlay-fullscreen-div {
+  position: fixed;
+  overflow: auto;
+  display: flex;
+  top: 0; right: 0; bottom: 0; left: 0;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
 }
 
 /*
