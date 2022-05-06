@@ -1,6 +1,6 @@
 /*
 ELEMENTS
-Written by AvoRaDev
+Written by AvoraDev
 All infomration was taken from https://ptable.com and
 https://www.lenntech.com/periodic/mass/atomic-mass.htm
 

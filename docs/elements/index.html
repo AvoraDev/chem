@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry Helper</title>
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@360&ampdisplay=swap" rel="stylesheet">
+  <!--stylesheet-->
+  <link rel="stylesheet" href="../../src/styles/style.css">
+</head>
+<body onload="ELEMENTS.Init('elem-display', 'elem-display-item')">
+  <!--navigation bar-->
+  <div id="nav-bar">
+    <h1><a href="../../index.html">Chemistry Helper</a></h1>
+    <a href="./index.html" class="active">Elements</a>
+    <a onclick="alert('Sorry! This is still under development')">Calculators</a>
+    <a onclick="alert('Sorry! This is still under development')">Constants</a>
+    <a onclick="alert('Sorry! This is still under development')">Other</a>
+  </div>
+  
+  <!--periodic table elements-->
+  <h1 style="text-align: center">Elements</h1>
+  <div class="h-centered-div">
+    <div id="pte-container">
+      <!--search menu-->
+      <div id="elem-search">
+        
+        <!--index dropdown-->
+        <label for="_indexDdl">Search by </label>
+        <select id="_indexDdl">
+          <option>Atomic Number</option>
+          <option>Symbol</option>
+          <option selected>Name</option>
+          <option>Atomic Mass</option>
+        </select>
+        
+        <!--search input-->
+        <input type="text" name="_searchBar" id="_searchBar"
+          placeholder="Search...">
+        
+        <!--'random element' button-->
+        <input type="button" name="_randElemBtn" id="_randElemBtn"
+          value="Random Element"/>
+          
+        <!--search display-->
+        <div id="elem-search-disp">
+          <p id="_searchDisp">Your results will appear here</p>
+        </div>
+      </div>
+      
+      <!--element display-->
+      <div id="elem-display"></div>
+    </div>
+  </div>
+  
+  <!--javascript-->
+  <script type="text/javascript" src="../../src/js/elements.js">
+  </script>
+  <script type="text/javascript" src="./index.js">
+  </script>
+</body>
+</html>
