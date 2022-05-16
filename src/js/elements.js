@@ -1,13 +1,14 @@
 /*
-ELEMENTS
+--------------------------- elements.js ---------------------------
 Written by AvoraDev
+Last modified: 04/10/2022
 All infomration was taken from https://ptable.com and
 https://www.lenntech.com/periodic/mass/atomic-mass.htm
 
-Notes on given information
-- Atomic masses have four significant figures
-- 'number' object - atomic number
-- 'mass' object - atomic mass
+Things to Notes
+- All atomic masses have four significant figures
+- 'number' object = atomic number
+- 'mass' object = atomic mass
 */
 const ELEMENTS = {
   elems: {
@@ -602,9 +603,9 @@ const ELEMENTS = {
       mass: '(294)'
     },
   },
-  // ---------------------------------
+  // ------------------------------------------------------------------------
   // OTHER FUNCTIONS & ARRAYS
-  // ---------------------------------
+  // ------------------------------------------------------------------------
   
   // element names array used for a variaty of functions
   elemKeys: [],
@@ -617,12 +618,13 @@ const ELEMENTS = {
   },
   // functions used on page load
   Init: function(targetDiv, itemStyle) {
+    this.LoadElemKeys();
+    this.IndexAll();
+    this.LoadAll(targetDiv, itemStyle);
+  },
+  LoadElemKeys: function() {
     // create array with all of ELEMENTS' object keys (element names)
     this.elemKeys = Object.keys(ELEMENTS.elems);
-    
-    // functions
-    this.Index();
-    this.LoadAll(targetDiv, itemStyle);
   },
   // load all elements to a targeted div with a given class style
   LoadAll: function(targetDiv, itemStyle = 'none') {
@@ -640,7 +642,7 @@ const ELEMENTS = {
     });
   },
   // sort all indexes
-  Index: function() {
+  IndexAll: function() {
     // name index
     this.idx.name = this.elemKeys.slice().sort();
     
@@ -663,7 +665,7 @@ const ELEMENTS = {
       } else { // i.e. '(286)'
         ELEMENTS.idx.mass.push(
           // + 0.0001 used to identify that it's radioactive
-          parseInt( ELEMENTS.elems[name].mass.substr(1,3) ) + 0.0001
+          ELEMENTS.MassStrToNum(ELEMENTS.elems[name].mass) + 0.0001
         );
       }
     });
@@ -708,12 +710,15 @@ const ELEMENTS = {
     document.getElementById(targetDiv).appendChild(container);
   },
   // get a random element
-  getRandElem: function() {
+  GetRandElem: function() {
     // return random element name
-    return this.elemKeys[this.getRandInt(0, this.elemKeys.length - 1)];
+    return this.elemKeys[this.GetRandInt(0, this.elemKeys.length - 1)];
   },
   // get a random interger
-  getRandInt: function(min, max) {
-    return Math.floor(Math.random() * ((max - min) + 1)) + min;
+  GetRandInt: function(min, max) {
+    return Math.floor( Math.random() * ((max - min) + 1) ) + min;
+  },
+  MassStrToNum: function(input) {
+    return parseInt( input.substr(1,3) );
   }
 };

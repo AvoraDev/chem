@@ -5,9 +5,9 @@ body {
   margin: 0;
 }
 
-/*------------------------------------*/
-/*NAVIGATION BAR STYLES*/
-/*------------------------------------*/
+/* ------------------------------------------------------------------------ */
+/* NAVIGATION BAR STYLES */
+/* ------------------------------------------------------------------------ */
 
 #nav-bar {
   background: rgb(190, 215, 235);
@@ -45,13 +45,53 @@ body {
   background: rgb(160, 185, 205);
   background: rgba(160, 185, 205, 0.8);
 }
-#nav-bar > a.active { 
+#nav-bar > a[href^="./"] { 
   color: rgb(0, 0, 255);
 }
 
-/*------------------------------------*/
-/*MAIN PAGE STLYES*/
-/*------------------------------------*/
+/* ------------------------------------------------------------------------ */
+/* DEFAULT CLASSES */
+/* ------------------------------------------------------------------------ */
+.def-content-container {
+  background: rgb(190, 215, 235);
+  display: grid;
+  width: 55%;
+  height: 50rem;
+  overflow: hidden;
+  grid-template-columns: 30% 70%;
+}
+.def-search-menu {
+  /* derrived from subtracting border and padding size from parents height */
+  height: 48.2rem;
+  border: 0.3rem solid rgb(0, 0, 0);
+  margin-right: -0.3rem;
+  padding: 0.6rem;
+}
+.def-search-menu-disp {
+  background: rgb(255, 255, 255);
+  height: 40rem;
+  color: rgb(150, 150, 150);
+  font-style: italic;
+  border: 0.3rem solid rgb(0, 0, 0);
+  overflow: auto;
+  margin-top: 0.6rem;
+  padding: 0 0.6rem;
+}
+.def-search-menu-disp a {
+  display: block;
+  color: rgb(0, 0, 255);
+  text-decoration: none;
+}
+.def-search-menu-disp a:hover {
+  /*background: rgb(200, 200, 200);*/
+  /*background: rgba(200, 200, 200, 0.5);*/
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------ */
+/* MAIN PAGE STLYES */
+/* ------------------------------------------------------------------------ */
 #main-div {
   background: rgb(190, 215, 235);
   text-align: center;
@@ -69,7 +109,7 @@ body {
   padding: 0.6rem 0.8rem;
 }
 #todo-list > h4 {
-  /*font-style: italic;*/
+  /* font-style: italic; */
   color: rgb(215, 30, 90);
 }
 #link-list {
@@ -78,23 +118,15 @@ body {
 }
 #link-list > a {
   display: block;
+  margin-bottom: 0.6rem;
 }
 
-/*------------------------------------*/
-/*ELEMENT PAGE STYLES*/
-/*------------------------------------*/
-
-#pte-container {
-  background: rgb(190, 215, 235);
-  display: grid;
-  width: 55%;
-  height: 50rem;
-  overflow: hidden;
-  grid-template-columns: 30% 70%;
-}
+/* ------------------------------------------------------------------------ */
+/* ELEMENT PAGE STYLES */
+/* ------------------------------------------------------------------------ */
 #elem-display {
   display: grid;
-  /*derrived from subtracting border and padding size from parents height*/
+  /* derrived from subtracting border and padding size from parents height */
   height: 48.2rem;
   border: 0.3rem solid rgb(0, 0, 0);
   overflow: auto;
@@ -115,63 +147,50 @@ body {
   padding: 0.6rem;
 }
 .elem-display-item > h1 { 
-  /*number*/
+  /* number */
   font-size: 1rem;
   font-style: italic;
 }
 .elem-display-item > h2 {
-  /*symbol*/
+  /* symbol */
   font-size: 2rem;
 }
 .elem-display-item > h3 {
-  /*name*/
+  /* name */
   font-size: 1rem
 }
 .elem-display-item > h3 > a {
-  /*name link*/
+  /* name link */
   color: rgb(0, 0, 255);
+  text-decoration: none;
 }
 .elem-display-item > h4 {
-  /*mass*/
+  /* mass */
   color: rgb(220, 220, 220);
   font-size: 1rem;
   font-style: italic;
 }
-#elem-search {
-  /*derrived from subtracting border and padding size from parents height*/
-  height: 48.2rem;
-  border: 0.3rem solid rgb(0, 0, 0);
-  margin-right: -0.3rem;
-  padding: 0.6rem;
-}
+
 #_searchBar {
-  /*try to clean this up*/
+  /* try to clean this up */
   width: 85%;
   margin: 0.6rem 0;
 }
-#elem-search-disp {
-  background: rgb(255, 255, 255);
-  height: 80%;
-  color: rgb(150, 150, 150);
-  font-style: italic;
-  border: 0.3rem solid black;
+
+/* ------------------------------------------------------------------------ */
+/* CALCULATOR PAGE STYLES */
+/* ------------------------------------------------------------------------ */
+#calc-display {
+  /* derrived from subtracting border and padding size from parents height */
+  height: 48.2rem;
+  border: 0.3rem solid rgb(0, 0, 0);
   overflow: auto;
-  margin-top: 0.6rem;
-  padding: 0 0.6rem;
-}
-#elem-search-disp a {
-  display: block;
-  color: rgb(0, 0, 255);
-  text-decoration: none;
-}
-#elem-search-disp > a:hover {
-  background: rgb(200, 200, 200);
-  background: rgba(200, 200, 200, 0.5);
+  padding: 0.6rem;
 }
 
-/*------------------------------------*/
-/*OTHER*/
-/*------------------------------------*/
+/* ------------------------------------------------------------------------ */
+/* OTHER */
+/* ------------------------------------------------------------------------ */
 
 .subtitle {
   color: rgb(125, 125, 125);
@@ -187,9 +206,9 @@ body {
   height: 100%;
   position: absolute;
   display: flex;
-  /*for horizontal*/
+  /* for horizontal */
   justify-content: center;
-  /*for vertical*/
+  /* for vertical */
   align-items: center;
 }
 .overlay-fullscreen-div {
@@ -202,7 +221,7 @@ body {
   user-select: none;
 }
 
-/*
+/* 
 custom scrollbar (not sure if i want to keep this)
 ::-webkit-scrollbar {
   width: 10px;

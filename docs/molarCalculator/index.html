@@ -4,56 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../../src/img/favicon.png">
-  <title>'Chem' | Elements</title>
+  <title>'Chem' | Molar Mass Calculator</title>
   <!--google font-->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@360&ampdisplay=swap" rel="stylesheet">
   <!--stylesheet-->
   <link rel="stylesheet" href="../../src/styles/style.css">
 </head>
-<body onload="ELEMENTS.Init('elem-display', 'elem-display-item')">
+<body onload="ELEMENTS.LoadElemKeys()">
   <!--navigation bar-->
   <div id="nav-bar">
     <h1><a href="../../">'Chem'</a></h1>
-    <a href="./">Elements</a>
-    <a href="../molarCalculator/">Molar Mass Calculator</a>
+    <a href="../elements/">Elements</a>
+    <a href="./">Molar Mass Calculator</a>
     <a onclick="alert('Sorry! This is still under development')">Constants</a>
     <a onclick="alert('Sorry! This is still under development')">Misc.</a>
   </div>
   
-  <!--periodic table elements-->
-  <h1 style="text-align: center">Elements</h1>
+  <h1 style="text-align: center">Molar Mass Calculator</h1>
   <div class="h-centered-div">
     <div class="def-content-container">
       <!--search menu-->
       <div class="def-search-menu">
-        
-        <!--index dropdown-->
-        <label for="_indexDdl">Search by </label>
-        <select id="_indexDdl">
-          <option>Atomic Number</option>
-          <option>Symbol</option>
-          <option selected>Name</option>
-          <option>Atomic Mass</option>
-        </select>
         
         <!--search input-->
         <input type="text" name="_searchBar" id="_searchBar"
           placeholder="Search...">
         
         <!--'random element' button-->
-        <input type="button" name="_randElemBtn" id="_randElemBtn"
-          value="Random Element"/>
+        <input type="button" name="_addBtn" id="_addBtn"
+          value="Add"/>
+          
+        <input type="button" name="_clearBtn" id="_clearBtn"
+          value="Clear"/>
           
         <!--search display-->
         <div class="def-search-menu-disp">
           <p id="_searchDisp">Your results will appear here</p>
         </div>
-        
       </div>
       
-      <!--element display-->
-      <div id="elem-display"></div>
+      <!--calculator display-->
+      <div id="calc-display">
+        <p><span id="_elemsToAdd">...</span></p>
+        <p>= <span id="_massesToAdd">...</span></p>
+        <p>= <span id="_results">...</span></p>
+      </div>
+      
     </div>
   </div>
   
