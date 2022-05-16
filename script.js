@@ -1,31 +1,30 @@
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 // HTML ELEMENTS
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 const canvas = document.querySelector('#canvas');
-const ctx = canvas.getContext('2d'); //  refuses to work
+const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 // CANVAS ANIMATION
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 const agents = [];
 const settings = {
   agent: {
-    maxTotal: 15,
+    maxTotal: 10,
     maxBounce: 10,
     speed: {
       min: 5,
       max: 8
     },
     size: {
-      min: 10,
-      max: 20
+      min: 25,
+      max: 35
     }
   }
 };
-let animateId = 0;
-let autoSpawnId = 0;
+let animateId, autoSpawnId = 0;
 let canvasFill = '';
 function init(bgColor) {
   canvasFill = bgColor;
@@ -43,21 +42,22 @@ function animate() {
   
   // agent collision detection
   agents.forEach((agent, index) => {
-    if (agent.x < 0 || (agent.x + agent.size) > canvas.width) {
+    if (agent.collision === true) {
       
-      if (agent.count < settings.agent.maxBounce) {
-        agent.velocity.x = opposite(agent.velocity.x);
-        agent.count++;
-      } else {
-        agents.splice(index, 1);
+      if (agent.x < 0 || (agent.x + agent.size) > canvas.width) {
+        agent.collisionCheck('x', settings.agent.maxBounce);
+        
+      } else if (agent.y < 0 || (agent.y + agent.size) > canvas.height) {
+        agent.collisionCheck('y', settings.agent.maxBounce);
+        
       }
       
-    } else if (agent.y < 0 || (agent.y + agent.size) > canvas.height) {
-      
-      if (agent.count < settings.agent.maxBounce) {
-        agent.velocity.y = opposite(agent.velocity.y);
-        agent.count++;
-      } else {
+    } else {
+      // remove agent once offscreen
+      if (
+        (agent.x < opposite(settings.agent.size.max) || (agent.x + agent.size) > canvas.width  + settings.agent.size.max) ||
+        (agent.y < opposite(settings.agent.size.max) || (agent.y + agent.size) > canvas.height + settings.agent.size.max)
+        ) {
         agents.splice(index, 1);
       }
       
@@ -75,9 +75,9 @@ function autoSpawn() {
   }, 750);
 }
 
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 // AGENT CLASS
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 class Agent {
   constructor(x, y, velocity, color, size) {
     this.x = x;
@@ -85,7 +85,8 @@ class Agent {
     this.velocity = velocity;
     this.color = color;
     this.size = size;
-    this.count = 1;
+    this.bounceCount = 0;
+    this.collision = true;
   }
   
   draw() {
@@ -98,11 +99,20 @@ class Agent {
     this.x = this.x + this.velocity.x;
     this.y = this.y + this.velocity.y;
   }
+  collisionCheck(axis, maxBounce) {
+    if (this.bounceCount < maxBounce) {
+      this.velocity[axis] = opposite(this.velocity[axis]);
+      this.bounceCount++;
+    } else {
+      this.collision = false;
+      // agents.splice(index, 1);
+    }
+  }
 }
 
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 // MISC FUNCTIONS & EVENT LISTENIERS
-// ------------------------------------------------
+// ------------------------------------------------------------------------
 function randInt(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -112,7 +122,7 @@ function randFloat(min, max) { // max excluded
 }
 
 function randColor() {
-  return `hsl(${randInt(0,360)},100%,50%)`;
+  return `hsl(${randInt(0,360)}, 100%, 50%)`;
 }
 
 function opposite(number) {
@@ -125,7 +135,7 @@ function centerSquare(coord, input) {
   else { return 'err'; }
 }
 
-function spawnAgent(event) {
+function spawnAgent() {
   // get agent size and speed
   let size = randInt(settings.agent.size.min, settings.agent.size.max);
   let speed = randInt(settings.agent.speed.min, settings.agent.speed.max);
