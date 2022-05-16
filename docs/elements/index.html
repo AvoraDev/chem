@@ -14,19 +14,19 @@
 <body onload="ELEMENTS.Init('elem-display', 'elem-display-item')">
   <!--navigation bar-->
   <div id="nav-bar">
-    <h1><a href="../../">Chemistry Helper</a></h1>
-    <a href="/" class="active">Elements</a>
-    <a onclick="alert('Sorry! This is still under development')">Calculators</a>
+    <h1><a href="../../">'Chem'</a></h1>
+    <a href="./">Elements</a>
+    <a href="../molarCalculator/">Molar Mass Calculator</a>
     <a onclick="alert('Sorry! This is still under development')">Constants</a>
-    <a onclick="alert('Sorry! This is still under development')">Other</a>
+    <a onclick="alert('Sorry! This is still under development')">Misc.</a>
   </div>
   
   <!--periodic table elements-->
   <h1 style="text-align: center">Elements</h1>
   <div class="h-centered-div">
-    <div id="pte-container">
+    <div class="def-content-container">
       <!--search menu-->
-      <div id="elem-search">
+      <div class="def-search-menu">
         
         <!--index dropdown-->
         <label for="_indexDdl">Search by </label>
@@ -46,9 +46,10 @@
           value="Random Element"/>
           
         <!--search display-->
-        <div id="elem-search-disp">
+        <div class="def-search-menu-disp">
           <p id="_searchDisp">Your results will appear here</p>
         </div>
+        
       </div>
       
       <!--element display-->
@@ -58,6 +59,8 @@
   
   <!--javascript-->
   <script type="text/javascript" src="../../src/js/elements.js">
+  </script>
+  <script type="text/javascript" src="../../src/js/owl.js">
   </script>
   <script type="text/javascript" src="./script.js">
   </script>
